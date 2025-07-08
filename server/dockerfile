@@ -1,0 +1,24 @@
+FROM node:18-alpine
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy dependency files
+COPY package.json package.json
+COPY pnpm-lock.yaml pnpm-lock.yaml
+
+# Install pnpm and dependencies
+RUN npm install -g pnpm
+RUN pnpm install
+
+# Copy remaining app files
+COPY . .
+
+# Build the TypeScript project
+RUN pnpm run build
+
+# Expose port
+EXPOSE 3000
+
+# Start the app
+CMD ["node", "dist/index.js"]

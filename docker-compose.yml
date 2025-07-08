@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  # pdf-rag:
+  #   image: yashdoc1234/pdf-rag:latest  # 🧠 Your custom image
+  #   depends_on:
+  #     - valkey
+  #     - qdrant
+  #   ports:
+  #     - "3000:3000"
+  #   restart: unless-stopped
+
+  valkey:
+    image: valkey/valkey
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+    restart: unless-stopped

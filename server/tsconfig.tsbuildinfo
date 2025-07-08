@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/utils/embedingmodel.ts","./src/utils/llmmodel.ts","./src/utils/uploadfile.ts","./src/utils/vectorstore.ts","./src/utils/worker.ts"],"version":"5.8.3"}
